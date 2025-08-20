@@ -5,221 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./output.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=play_arrow" />
-    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
-
-
-
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    
 </head>
 <body>
-    <nav class="flex justify-between mt-3 items-center">
-        <div class="flex text-[24px] font-[700] text-[#344761] ml-4" >Devin</div>
-        <ul class="flex justify-between items-center gap-[30px] mr-[36px] text-[rgb(83, 93, 107)] font-[400] text-[17px] text-gray-700">
-            <li class="hover:border-[#344761] transition-colors border-transparent  border-b-[1px] duration-300">Home</li>
-            <li class="hover:border-[#344761] transition-colors border-transparent  border-b-[1px] duration-300">About</li>
-            <li class="hover:border-[#344761] transition-colors border-transparent  border-b-[1px] duration-300">Service</li>
-            <li class="hover:border-[#344761] transition-colors border-transparent  border-b-[1px] duration-300">Profolio</li>
-            <li class="hover:border-[#344761] transition-colors border-transparent  border-b-[1px] duration-300">Team</li>
-            <li class="hover:border-[#344761] transition-colors border-transparent  border-b-[1px] duration-300">Dropdown</li>
-            <li class="hover:border-[#344761] transition-colors border-transparent  border-b-[1px] duration-300">Extended Dropdown</li>
-            <li class="hover:border-[#344761] transition-colors border-transparent  border-b-[1px] duration-300">Megamenu</li>
-            <li class="hover:border-[#344761] transition-colors border-transparent  border-b-[1px] duration-300">Contact</li>  
-        </ul>
+    <nav class="p-3 flex bg-white justify-between items-center">
+        <a href="#" class="flex gap-2 items-center">
+            <img class="object-cover max-w-12 max-h-12" src="../assets/asset_0.png" alt="logos">
+            <span class="text-lg font-medium font-display">ToDesktop</span>
+        </a>
+        <div id="nav-menu" class="hidden md:flex gap-12">
+            <a href="#" class="font-medium hover:text-[#3238f2]">Pricing</a>
+            <a href="#" class="font-medium hover:text-[#3238f2]">Docs</a>
+            <a href="#" class="font-medium hover:text-[#3238f2]">Changlog</a>
+            <a href="#" class="font-medium hover:text-[#3238f2]">Blogs</a>
+            <a href="#" class="font-medium hover:text-[#3238f2]">Login</a>
+        </div>
+        <button class="hidden  md:flex gap-2 items-center border border-gray-400 px-6 py-2 rounded-lg hover:border-gray-700">
+            <img src="..\assets\asset 1.svg" alt="">
+            <span>Electron Developers</span>
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+        <button class="p-2 md:hidden" onclick="headlMenu()">
+            <i class="fa-solid fa-bars text-gray-600"></i>
+        </button>
     </nav>
-    <!-- hero section -->
-
-    <header class="flex  w-full my-[80px] ml-24 ">
-        <div class="w-1/2 mb-[50px] justify-start ml-20px ">
-            <h1 class="text-[36px] text-9xl mb-[25px] [font-weight:inherit]">Transform Your 
-                <samp class="text-[#2855de] border-b-4"> Digital Future</samp>
-            </h1>
-            <p class=" text-gray-500 text-[16px] mb-[35px] ">Sed ut perspiciatis unde omnis iste natus error sit voluptatem <br> accusantium doloremque laudantium totam rem aperiam.</p>
-            
-            <div class="flex items-center ">
-                <button class="px-[51px] py-[17px] bg-[#5c99ee] rounded-2xl text-white text-base shadow-2xl">Start Journey</button>
-                <button class="py-[13px] px-[17px] bg-[#5c99ee] rounded-full items-center justify-center grid-col ml-3 shadow-2xl">
-                    <span class="text-white font-bold material-symbols-outlined">play_arrow</span> 
-                </button>
-                <p class="ml-[25px] text-[17px] text-gray-600 font-[700]">Watch Demo</p>
-            </div>
-        
-        </div>
-        <div class="w-1/2">
-            <img class="h-[330px] object-contain overflow-auto pl-[26px]" src="https://bootstrapmade.com/content/demo/Devin/assets/img/illustration/illustration-28.webp" alt="">
-        </div>
-    </header>
-    <!-- ends of Hero section -->
-
-    <!-- name-section -->
-    <div class="flex items-center justify-between space-x-4 mx-[98px]">
-        <img class="h-11 w-auto object-contain" src="https://bootstrapmade.com/content/demo/Devin/assets/img/clients/clients-1.webp" alt="">
-        <img class="h-11 w-auto object-contain" src="https://bootstrapmade.com/content/demo/Devin/assets/img/clients/clients-2.webp" alt="">
-        <img class="h-11 w-auto object-contain" src="https://bootstrapmade.com/content/demo/Devin/assets/img/clients/clients-3.webp" alt="">
-        <img class="h-11 w-auto object-contain" src="https://bootstrapmade.com/content/demo/Devin/assets/img/clients/clients-4.webp" alt="">
-        <img class="h-11 w-auto object-contain" src="https://bootstrapmade.com/content/demo/Devin/assets/img/clients/clients-5.webp" alt="">
-        <img class="h-11 w-auto object-contain" src="https://bootstrapmade.com/content/demo/Devin/assets/img/clients/clients-6.webp" alt="">
-    </div>
-    <!-- name-section-ends -->
-
-    <header class="flex w-full my-[38px] mx-[100px]">
-        <div>
-            <img  class="rounded-2xl"  src="https://img.freepik.com/premium-photo/psd-new-year-digital-flyer_1001710-9135.jpg" alt="">
-        </div>
-
-        <div class="justify-start ml-[80px]">
-            <h1 class="text-[40px] font-[400] mt-[50px] text-gray-600 mb-[35px]">Crafting Excellence Through <br> Innovation and Dedication</h1>
-            <p class="text-[#535d6b] mb-[40px]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <br> eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <p class="text-[#535d6b]  mb-[50px]">
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip <br> ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate <br> velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
-            <div class="border-[1px] border-[#b2bfd1]"></div>
-
-            <div class="flex justify-between mt-[30px]">
-                <div >
-                    <samp class="text-[38px] text-[#587EDE] font-[300] ">150+</samp>
-                    <p class="text-[14.4px] font-[400] text-[#535d6b]">Projects Completed</p>
-                </div>
-                <div>
-                    <samp class="text-[38px] text-[#587EDE] font-[300] ">12+</samp>
-                    <p class="text-[14.4px] font-[400] text-[#535d6b]">Years Experience</p>
-                </div>
-                <div>
-                    <samp class="text-[38px] text-[#587EDE] font-[300] ">98%</samp>
-                    <p class="text-[14.4px] font-[400] text-[#535d6b]">Client Satisfaction</p>
-                </div>
-            </div>
-            <div class="mt-[27px]">
-                <button class=" border-2 px-[32px] py-[17px] rounded-[5px] bg-blue-400 border-hidden text-white ">Discover Our Story</button>
-            </div>
-        </div>
-    </header>
-
-    <div>
-        <div class="items-center justify-center grid mt-[160px]">
-           <h1 class="text-[32px] font-[300] mb-[20px] pb-[20px] border-b-[2px] text-center text-gray-600 border-[#9da5b586]">Services</h1>
-           <p class=" text-gray-600">Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-        </div>
-    </div>
-
-    <div class="max-w-7xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mt-[90px]">
-
-        <!-- Card 1 -->
-        <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-            <div class="p-5">
-                <h2 class="text-lg font-semibold mb-3">Streamlined Workflow <br> Solution</h2>
-                <p class="text-gray-600 text-sm mb-2">
-                    Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit. Ut <br> elit tellus, luctus nec ullamcorper <br> mattis, pulvinar dapibus leo.
-                </p>
-                <p class="text-gray-600 text-sm mb-[10px]">Integrated development <br>environment</p>
-                <p class="text-gray-600 mb-2 text-sm">Cloud-based collaborative tools</p>
-                <p class="text-gray-600 mb-2 text-sm">Automated testing procedures</p>
-            </div>
-            <img src="https://bootstrapmade.com/content/demo/Devin/assets/img/illustration/illustration-14.webp" alt="Card Image" class="w-full h-48 object-cover mb-[20px]">
-        </div>
-    
-        <!-- Card 2 -->
-        <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-            <div class="p-5">
-                <h2 class="text-lg font-semibold mb-3">Performance Analytics</h2>
-                <p class="text-gray-600 text-sm mb-3">
-                    Vestibulum ante ipsum primis in <br> faucibus orci luctus et ultrices <br> posuere cubilia Curae; Donec velit <br> neque, auctor sit amet aliquam vel.
-                </p>
-                <p class="text-gray-600 text-sm mb-3">Real-time data visualization</p>
-                <p class="text-gray-600 text-sm mb-3">Custom report generation</p>
-                <p class="text-gray-600 text-sm mb-3">Predictive analysis models</p>
-            </div>
-            <img src="https://bootstrapmade.com/content/demo/Devin/assets/img/illustration/illustration-6.webp" alt="Card Image" class="w-full h-48 object-cover mt-[30px]">
-        </div>
-    
-        <!-- Card 3 -->
-        <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-            <div class="p-5">
-                <h2 class="text-lg font-semibold mb-3">Enterprise Security Framework</h2>
-                <p class="text-gray-600 text-sm">
-                    Quisque velit nisi, pretium ut lacinia <br> in, elementum id enim. Mauris <br> blandit aliquet elit, eget  <br>tincidunt nibh pulvinar.
-                </p>
-                <p class="text-gray-600 text-sm mt-[20px]">Multi-factor authentication</p>
-                <p class="text-gray-600 text-sm mt-[20px]">End-to-end encryption standard</p>
-                <p class="text-gray-600 text-sm mt-[20px]">Automated security audits</p>
-            </div>
-            <img src="https://bootstrapmade.com/content/demo/Devin/assets/img/illustration/illustration-7.webp" alt="Card Image" class="w-full h-48 object-cover">
-        </div>
-    
-        <!-- Card 4 -->
-        <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-            <div class="p-5">
-                <h2 class="text-lg font-semibold mb-3">Collaborative Team Environment</h2>
-                <p class="text-gray-600 text-sm mb-2">
-                    Praesent sapien massa, convallis a <br> pellentesque nec, egestas non nisi. <br> Cras ultricies ligula sed magna <br> dictum porta..
-                </p>
-                <p class="text-gray-600 text-sm mb-[20px]">Shared workspace functionality</p>
-                <p class="text-gray-600 text-sm mb-[20px]">Real-time communication tools</p>
-                <p class="text-gray-600 text-sm mb-[20px]">Progress tracking dashboards</p>
-            </div>
-            <img src="https://bootstrapmade.com/content/demo/Devin/assets/img/illustration/illustration-8.webp" alt="Card Image" class="w-full h-48 object-cover">
-        </div>
-    
-      </div>
-
-    <div>
-        <div class="items-center justify-center grid mt-[160px]">
-           <h1 class="text-[32px] font-[300] mb-[20px] pb-[20px] border-b-[2px] text-center text-gray-600 border-[#9da5b586]">Portfolio</h1>
-           <p class=" text-gray-600">Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-        </div>
-    </div>
-
-    <div class="max-w-7xl mx-auto grid gap-6  lg:grid-cols-3 mt-[90px]">
-        <div class="overflow-hidden transition-shadow">
-            <img src="https://bootstrapmade.com/content/demo/Devin/assets/img/portfolio/portfolio-7.webp" alt="Card Image" class="w-auto h-60 object-cover mb-[20px] rounded-2xl ">
-            <div class="text-center ">
-                <h2 class="text-[20px] font-[400] text-[#5c99ee] mb-[15px]">Motion Graphics</h2>
-                <p class="text-gray-400 text-sm mb-3">Animated visual storytelling</p>
-            </div>
-        </div>
-        <div class="overflow-hidden transition-shadow">
-            <img src="https://bootstrapmade.com/content/demo/Devin/assets/img/portfolio/portfolio-8.webp" alt="Card Image" class="w-auto h-60 object-cover mb-[20px] rounded-2xl ">
-            <div class="text-center ">
-                <h2 class="text-[20px] font-[400] text-[#5c99ee] mb-[15px]">E-commerce Platform</h2>
-                <p class="text-gray-400 text-sm mb-3">Modern online shopping experience</p>
-            </div>
-        </div>
-        <div class="overflow-hidden transition-shadow">
-            <img src="https://bootstrapmade.com/content/demo/Devin/assets/img/portfolio/portfolio-3.webp" alt="Card Image" class="w-auto h-60 object-cover mb-[20px] rounded-2xl ">
-            <div class="text-center">
-                <h2 class="text-[20px] font-[400] text-[#5c99ee] mb-[15px]">Magazine Design</h2>
-                <p class="text-gray-400 text-sm mb-3">Editorial layout and typography</p>
-            </div>
-        </div>
-    </div>  
-
-
-    <div class="max-w-7xl mx-auto grid gap-6  lg:grid-cols-3 mt-[90px]">
-        <div class="overflow-hidden transition-shadow">
-            <img src="https://bootstrapmade.com/content/demo/Devin/assets/img/portfolio/portfolio-4.webp" alt="Card Image" class="w-auto h-60 object-cover mb-[20px] rounded-2xl ">
-            <div class="text-center ">
-                <h2 class="text-[20px] font-[400] text-[#5c99ee] mb-[15px]">Motion Graphics</h2>
-                <p class="text-gray-400 text-sm mb-3">Animated visual storytelling</p>
-            </div>
-        </div>
-        <div class="overflow-hidden transition-shadow">
-            <img src="https://bootstrapmade.com/content/demo/Devin/assets/img/portfolio/portfolio-5.webp" alt="Card Image" class="w-auto h-60 object-cover mb-[20px] rounded-2xl ">
-            <div class="text-center ">
-                <h2 class="text-[20px] font-[400] text-[#5c99ee] mb-[15px]">Logo Collection</h2>
-                <p class="text-gray-400 text-sm mb-3">Diverse brand mark explorations</p>
-            </div>
-        </div>
-        <div class="overflow-hidden transition-shadow">
-            <img src="https://bootstrapmade.com/content/demo/Devin/assets/img/portfolio/portfolio-9.webp" alt="Card Image" class="w-auto h-60 object-cover mb-[20px] rounded-2xl ">
-            <div class="text-center">
-                <h2 class="text-[20px] font-[400] text-[#5c99ee] mb-[15px]">Mobile App Design</h2>
-                <p class="text-gray-400 text-sm mb-3">User-centered interface design</p>
-            </div>
-        </div>
-    </div>  
-
-
+    <script src="script.js"></script>
 </body>
 </html> 
+<!-- 18: 32 -->
