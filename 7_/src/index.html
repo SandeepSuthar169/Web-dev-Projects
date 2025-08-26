@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./output.css">
+    <title>Palindrome Checker</title>
+</head>
+<body class="bg-gray-100">
+    <div id="container" class="flex items-center justify-center h-screen flex-col px-6 py-8 bg-white shadow-lg rounded-lg w-[90%] max-w-md mx-auto">
+        <h1 class="text-3xl font-bold text-amber-500 mb-6">Palindrome Checker</h1>
+        
+        <input 
+            type="text" 
+            id="inputText" 
+            placeholder="Enter a word or phrase"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400 mb-4"
+        >
+        
+        <button 
+            id="checkButton" 
+            class="w-full bg-amber-400 hover:bg-amber-500 text-white font-semibold py-2 rounded-md transition-colors duration-200"
+        >
+            Check Palindrome
+        </button>
+        
+        <p id="resultMessage" class="mt-4 text-lg font-medium text-gray-700"></p>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
