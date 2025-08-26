@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div id="calculator" class="flex items-center justify-center h-screen flex-col">
+        <h1 class="text-gray-800 text-3xl font-bold mb-4">Simple calculator</h1>
+        <input class="border-1 px-5 py-2 rounded-[6px] mb-3"  type="text" id="number1" placeholder="Enter first number">
+        <input class="border-1 px-5 py-2 rounded-[6px]"       type="text" id="number2" placeholder="Enter secound number">
+        <div id="buttons" class="flex items-center gap-4 mt-4 mb-4">
+            <button class="px-3 py-2 border-[1px] rounded-[4px] bg-gray-100"  onclick="calculate('+')">+</button>
+            <button class="px-3 py-2 border-[1px] rounded-[4px] bg-gray-100"  onclick="calculate('-')">-</button>
+            <button class="px-3 py-2 border-[1px] rounded-[4px] bg-gray-100"  onclick="calculate('*')">*</button>
+            <button class="px-3 py-2 border-[1px] rounded-[4px] bg-gray-100"  onclick="calculate('/')">/</button>
+        </div>
+        <p id="result" class="text-xl">Result:  </p>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</htm10>
