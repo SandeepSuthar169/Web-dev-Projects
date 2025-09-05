@@ -8,12 +8,32 @@
     <title>Document</title>
 </head>
 <body class="bg-[#222]">
-    <div id="card" class="w-[90%] max-w-[470px] bg-gradient-to-br from-[#00feba] to-[#5b548a] text-[#fff] mt-[100px] mx-auto mb-0 rounded-[20px] px-[40px] py-[35px] text-center" >
-        <div id="search">
-            <input type="text" placeholder="Enter city Name" spellcheck="false">
-            <button>
-                <i class="fa-solid fa-magnifying-glass"></i>
+    <div id="card" class="w-[90%] max-w-[470px] bg-gradient-to-br from-[#d8ad0f] to-[#11a37380] text-[#fff] mt-[100px] mx-auto mb-0 rounded-[20px] px-[40px] py-[35px] text-center" >
+        <div id="search" class="w-full flex items-center justify-between">
+            <input class="border-0 outline-0 bg-[#e9e8db] text-[#0b0b0b] px-[10px] py-[25px] h-[60px] rounded-[10px] flex-1 mr-16px" type="text" placeholder="Enter city Name" spellcheck="false">
+            <button class="border-0 outline-0 bg-[#e9e8db] rounded-[50%] w-[50px] h-[50px] cursor-pointer ml-3">
+                <i class="fa-solid fa-magnifying-glass w-[16px] text-gray-800"></i>
             </button>
+        </div>
+        <div id="weather" class="flex flex-col  items-center gap-2 ">
+            <img class=" w-[200px] mt-4" id="weather-icon" src="../3767036-3576413372.png" alt="">
+            <h1 id="temp">22 °C</h1>
+            <h2 id="city">Vadodara</h2>
+            <div id="details">
+                <div id="col">
+                    <i class="fa-solid fa-cloud"></i>
+                    <div>
+                        <P id="humidity">50%</P>
+                        <p>humidity</p>
+                    </div>
+                </div>
+                <div id="col">
+                    <i class="fa-solid fa-wind"></i>                    <div>
+                        <P id="wind">15 km/h</P>
+                        <p>Wind seppd</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     
