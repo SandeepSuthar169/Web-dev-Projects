@@ -1,26 +1,29 @@
-function updateClock(){
-     const timeDocument =  document.getElementById("time");
-     const dateDocument =  document.getElementById('date');
+const time = document.getElementById("time")
+const date = document.getElementById("date")
 
-     const now = new Date();
-     const hours =  now.getHours() % 12 || 12;
-     const minutes =  now.getMinutes().toString().padStart(2, "0");
-     const sec = now.getSeconds().toString().padStart(2, "0")
-     const amPm = now.getHours() >= 12 ? "PM" : "AM";
 
-     const options = {
+function timeDate(){
+    let now = new Date()
+    let hr = now.getHours() % 12 || 12
+    let hrs = hr.toString().padStart(2, "0")
+    let min = now.getMinutes().toString().padStart(2, "0")
+    let sec  = now.getSeconds().toString().padStart(2, "0")
+    let amPm = now.getHours() >= 12 ? "PM" : "AM" 
+
+    
+    const options = {
         weekday: "short",
         year: "numeric",
         month: "short",
         day: "numeric",
-      };
-     const date =  now.toLocaleDateString(undefined, options )
+    };
+    date.innerHTML = now.toLocaleDateString(undefined, options)
+    time.innerHTML = `${hrs}:${min}:${sec} ${amPm}`
+    
+    
 
 
-     timeDocument.textContent = `${hours}:${minutes}:${sec} ${amPm}`
-     dateDocument.textContent =  date
 }
+setInterval(timeDate, 1*1000)
 
-setInterval(updateClock, 1000);
-
-updateClock()
+timeDate()
