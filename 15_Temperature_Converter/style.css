@@ -8,7 +8,6 @@ body {
     font-family: monospace;
     color: darkcyan;
   }
-  
   .container {
     background: rgba(255, 255, 255, 0.3);
     padding: 20px;
@@ -21,18 +20,15 @@ body {
     flex-direction: column;
     align-items: center;
   }
-  
   .heading {
     font-size: 32px;
   }
-  
   .temp-container {
     width: 100%;
     padding: 15px;
     font-weight: bold;
     font-size: 18px;
   }
-  
   .input {
     width: 220px;
     font-family: monospace;
@@ -44,7 +40,6 @@ body {
     color: darkgreen;
     font-size: 18px;
   }
-  
   
   .input::placeholder{
       color: darkgray;
