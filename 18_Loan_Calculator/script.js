@@ -6,12 +6,14 @@ const payment = document.getElementById('payment')
 const btn = document.getElementById('btn')
 
 function loanCalculator(){
-    let a = loanAmount.value
-    let b = interestRate.value
-    let c = monthsToPay.value
-    console.log(a);
-    
+    let P = parseInt(loanAmount.value)
+    let r = parseInt(interestRate.value)
+    let n =  parseInt(monthsToPay.value)
+    let i = (r / 12 * 100).toFixed(3)
 
+    let EMI = (((P * i) * (1+ i)**n)/ ((1+i)**n -1)).toFixed(3)
+    
+    payment.innerText = `Monthly Payment: ${EMI}` 
 }
 
 btn.addEventListener('click', loanCalculator)
