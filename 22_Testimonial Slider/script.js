@@ -34,7 +34,7 @@ const testimonialSidebar = () => {
     texts.textContent = text
     index++
 
-    // index = (index + 1) % testimonials.length
+
     if (index === testimonials.length) {
         index = 0;
       }
