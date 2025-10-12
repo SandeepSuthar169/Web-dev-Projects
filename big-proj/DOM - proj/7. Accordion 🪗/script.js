@@ -1,17 +1,11 @@
-// const containers  = document.querySelectorAll('accordion-item')
+const containers  = document.querySelectorAll('.accordion-item')
 
-// const accordion = () => {
-//     this.classList.toggle('active')
-// }
+function activeToggle(){
+  this.classList.toggle('active')
+}
 
 
-// for(let i = 0; i< containers.length; i++){
-//     containers[i].addEventListener('click', accordion)
-// }
+containers.forEach(items => {
+  items.addEventListener('click', activeToggle)
+})
 
-document.querySelectorAll('.accordion-item').forEach(item => {
-    item.addEventListener('click', function() {
-      this.classList.toggle('active');
-    });
-  });
-  
