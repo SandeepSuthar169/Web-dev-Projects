@@ -1,33 +1,50 @@
 
 const images = [
   {
-    url: 'https://plus.unsplash.com/premium_photo-1666863909125-3a01f038e71f?q=80&w=1986&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    caption: 'Beautiful Mountain Landscape',
+    'name': 'CSS',
+    'img': 'http://thapatechnical.online/logos/css.png',
   },
   {
-    url: 'https://plus.unsplash.com/premium_photo-1690576837108-3c8343a1fc83?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    caption: 'Ocean Sunset View',
+      'name': 'HTML',
+      'img': 'http://thapatechnical.online/logos/html5.png',
   },
   {
-    url: 'https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=2041&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    caption: 'Autumn Forest Path',
+      'name': 'jQuery',
+      'img': 'http://thapatechnical.online/logos/jquery.png',
   },
   {
-    url: 'https://plus.unsplash.com/premium_photo-1680466057202-4aa3c6329758?q=80&w=2138&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    caption: 'Urban City Skyline',
+      'name': 'JS',
+      'img': 'http://thapatechnical.online/logos/js.png',
   },
+  {
+      'name': 'Node',
+      'img': 'http://thapatechnical.online/logos/nodejs.png',
+  },
+  {
+      'name': 'Python',
+      'img': 'http://thapatechnical.online/logos/python.png',
+  }
+
 ];
 
 
+const parentDiv = document.getElementById('card-section')
 
-const gameContainer = document.getElementById('gameContainer')
+parentDiv.addEventListener('click', (e) => {
+  let eventCard = e.target;
+
+  eventCard.className = "card-selected"
+})
+
 
 for(let i = 0; i < images.length; i++){
-    const Div = document.createElement('div')
-    Div.className = 'card'
-    Div.dataset.name = images[i].caption
-    Div.style.backgroundImage =  `url(${images[i].url})`
 
+  const childDiv = document.createElement('div')
+  childDiv.className = "card"
 
-    gameContainer.appendChild(Div)
+  childDiv.dataset.name = images[i].name
+  childDiv.style.backgroundImage = `url(${images[i].img})`
+
+  parentDiv.appendChild(childDiv)
 }
+
