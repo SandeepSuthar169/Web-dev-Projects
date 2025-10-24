@@ -38,6 +38,7 @@
   border-radius: 10px;
   outline: none;
   font-size: 1rem;
+  color: #151515;
   }
   
   button {
@@ -68,6 +69,7 @@
   .weather-info h2 {
   font-size: 16px;
   margin-bottom: 10px;
+  justify-content: space-between;
   }
   
 p{
@@ -76,6 +78,34 @@ p{
 h2{
   text-align: left
 }
+
+#location,
+#temperature,
+#description,
+#temp_min,
+#temp_max,
+#pressure,
+#humidity,
+#speed,
+#country {
+  display: flex;
+  justify-content: space-between; /* separates label & value */
+  width: 100%;
+  max-width: 400px; /* adjust as needed */
+  margin: 4px 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.left {
+  font-weight: 600;
+  color: rgb(223, 195, 14);
+}
+
+.right {
+  color: #ffffff;
+}
+
   .weather-info p {
   margin: 6px 0;
   font-size: 1rem;

@@ -25,16 +25,15 @@ function showWeatherData(locationName) {
     fetch(uri)
         .then(response => response.json())
         .then(data => {
-            locationElement.innerText = `City :  ${data.name}`;
-            temperature.innerText = `Temperature : ${data.main.temp} °C`;
-            description.innerText = `Description : ${data.weather[0].description}`;
-            temp_min.innerText = `Minimum Temperature : ${data.main.temp_min} °C`;
-            temp_max.innerText = `Maximum Temperature : ${data.main.temp_max} °C`;
-            pressure.innerText = `Pressure : ${data.main.pressure} N/m²`;
-            humidity.innerText = `Humidity : ${data.main.humidity} g/m³`;
-            speed.innerText = `Wind Speed : ${data.wind.speed}`;
-            country.innerText = `Country : ${data.sys.country}`;
-
+            locationElement.innerHTML = `<span class="left">City :</span><span class="right">${data.name}</span>`;
+            temperature.innerHTML = `<span class="left">Temperature :</span><span class="right">${data.main.temp} °C</span>`;
+            description.innerHTML = `<span class="left">Description :</span><span class="right">${data.weather[0].description}</span>`;
+            temp_min.innerHTML = `<span class="left">Min Temp :</span><span class="right">${data.main.temp_min} °C</span>`;
+            temp_max.innerHTML = `<span class="left">Max Temp :</span><span class="right">${data.main.temp_max} °C</span>`;
+            pressure.innerHTML = `<span class="left">Pressure :</span><span class="right">${data.main.pressure} N/m²</span>`;
+            humidity.innerHTML = `<span class="left">Humidity :</span><span class="right">${data.main.humidity} g/m³</span>`;
+            speed.innerHTML = `<span class="left">Wind Speed :</span><span class="right">${data.wind.speed} m/s</span>`;
+            country.innerHTML = `<span class="left">Country :</span><span class="right">${data.sys.country}</span>`;
         })
         .catch(error => {
             console.error("Error fetching weather data:", error);
