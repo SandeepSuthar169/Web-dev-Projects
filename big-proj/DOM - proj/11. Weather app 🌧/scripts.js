@@ -1,5 +1,6 @@
 const locationInput = document.getElementById('locationInput');
 const searchButton = document.getElementById('searchButton');
+
 const locationElement = document.getElementById('location');
 const temperature = document.getElementById('temperature');
 const description = document.getElementById('description');
@@ -24,19 +25,22 @@ function showWeatherData(locationName) {
     fetch(uri)
         .then(response => response.json())
         .then(data => {
-            locationElement.innerText = data.name;
-            temperature.innerText = `${data.main.temp} °C`;
-            description.innerText = data.weather[0].description;
-            temp_min.innerText = `${data.main.temp_min}`;
-            temp_max.innerText = `${data.main.temp_max}`;
-            pressure.innerText = `${data.main.pressure}`;
-            humidity.innerText = `${data.main.humidity}`;
-            speed.innerText = `${data.wind.speed}`;
-            country.innerText = `${data.sys.country}`;
+            locationElement.innerText = `City :  ${data.name}`;
+            temperature.innerText = `Temperature : ${data.main.temp} °C`;
+            description.innerText = `Description : ${data.weather[0].description}`;
+            temp_min.innerText = `Minimum Temperature : ${data.main.temp_min} °C`;
+            temp_max.innerText = `Maximum Temperature : ${data.main.temp_max} °C`;
+            pressure.innerText = `Pressure : ${data.main.pressure} N/m²`;
+            humidity.innerText = `Humidity : ${data.main.humidity} g/m³`;
+            speed.innerText = `Wind Speed : ${data.wind.speed}`;
+            country.innerText = `Country : ${data.sys.country}`;
 
         })
         .catch(error => {
             console.error("Error fetching weather data:", error);
             locationElement.innerText = "City not found!";
         });
+
+
+        locationInput.value = ""
 }
