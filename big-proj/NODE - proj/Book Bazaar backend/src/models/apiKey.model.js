@@ -1,4 +1,5 @@
 import mongoose, { Schema } from "mongoose";
+import bcrypt from "bcrypt"
 
 const apiKeySchema = new Schema(
     {
@@ -25,5 +26,12 @@ const apiKeySchema = new Schema(
         timestamps: true
     }
 )
+
+apiKeySchema.pre("save", function(next){
+    if(!this.key){
+        this.key = crypto.randomBytes(20).toString("hex")
+    }
+    next()
+})
 
 export const apiKey = mongoose.model("apiKey", apiKeySchema)

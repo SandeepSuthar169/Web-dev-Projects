@@ -1,5 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 import { paymentMethodEnum, AvailablepaymentMethod } from "../utils/constants.js"
+
+
 const paymentSchema = new Schema( 
     {
         books: {
@@ -25,6 +27,9 @@ const paymentSchema = new Schema(
             ref: "User",
             required: true
         }
+    },
+    {
+        timestamps: true
     }
 )
 

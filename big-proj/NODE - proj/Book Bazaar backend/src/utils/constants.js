@@ -1,5 +1,3 @@
-import { isObjectIdOrHexString } from "mongoose"
-
 //1. User Role
 export const UserRoleEnum = {
     ADMIN: "admin",
@@ -44,6 +42,7 @@ export const AvailableOrderPaymentStatus = Object.values(OrderPaymentStatusEnum)
 
 //5 Review Rating 
 export const ReviewRatingEnum = {
+    NOT_DEFINED: "not_defined",
     STAR_1: "1",
     STAR_2: "2",
     STAR_3: "3",

@@ -57,6 +57,9 @@ const booksSchema = new Schema(
             default: 0
         }
 
+    },
+    {
+        timestamps: true
     }
 )
 

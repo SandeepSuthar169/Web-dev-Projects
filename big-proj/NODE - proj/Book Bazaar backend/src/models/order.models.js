@@ -39,6 +39,9 @@ const orderSchema = new Schema(
             enum: AvailableOrderState,
             default: OrderStateEnum.PENDING
         }
+    },
+    {
+        timestamps: true
     }
 )
 
