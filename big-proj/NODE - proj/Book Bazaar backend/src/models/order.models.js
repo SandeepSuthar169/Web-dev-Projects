@@ -1,4 +1,11 @@
 import mongoose, { Schema } from "mongoose";
+import { 
+    AvailableOrderPaymentStatus, 
+    OrderPaymentStatusEnum, 
+    OrderStateEnum, 
+    AvailableOrderState  
+} from "../utils/constants.js"
+
 
 const orderSchema = new Schema(
     {
@@ -22,8 +29,15 @@ const orderSchema = new Schema(
             ref: "User",
             required: true
         },
+        paymentStatus: {
+            type: String,
+            enum: AvailableOrderPaymentStatus,
+            default: OrderPaymentStatusEnum.PENDING
+        },
         state: {
-            type: String
+            type: String,
+            enum: AvailableOrderState,
+            default: OrderStateEnum.PENDING
         }
     }
 )

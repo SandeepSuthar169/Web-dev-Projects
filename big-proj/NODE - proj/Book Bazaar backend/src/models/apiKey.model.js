@@ -17,7 +17,7 @@ const apiKeySchema = new Schema(
             trim: true
         },
         lastUserd: {
-            type: Date,
+            type: Boolean,
             required: true,
         }
     },

@@ -1,8 +1,30 @@
 import mongoose, { Schema } from "mongoose";
-
-const paymentSchema = new Schema(
+import { paymentMethodEnum, AvailablepaymentMethod } from "../utils/constants.js"
+const paymentSchema = new Schema( 
     {
-
+        books: {
+            type: Schema.Types.ObjectId,
+            ref: "Books",
+            required: true
+        },
+        paymentMethod: {
+            type: String,
+            enum: AvailablepaymentMethod,
+            default: paymentMethodEnum.CURRENCY
+        },
+        amount: {
+            type: Number,
+            required: true,
+            min: 0
+        },
+        paymentDate: {
+            type: Date,
+        },
+        user: {
+            type: Schema.Types.ObjectId,
+            ref: "User",
+            required: true
+        }
     }
 )
 

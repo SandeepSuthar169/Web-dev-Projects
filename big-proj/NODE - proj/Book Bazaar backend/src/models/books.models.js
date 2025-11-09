@@ -1,4 +1,5 @@
 import mongoose, { Schema } from "mongoose";
+import { BooksStatusEnum, AvaailableBooksStatus} from "../utils/constants.js"
 
 const booksSchema = new Schema(
     {
@@ -25,6 +26,11 @@ const booksSchema = new Schema(
             type: Number,
             required: true,
             min: 0
+        },
+        status: {
+            type: String,
+            enum: AvaailableBooksStatus,
+            default: BooksStatusEnum.AVAILABLE
         },
         publishDate: {
             type: Date,

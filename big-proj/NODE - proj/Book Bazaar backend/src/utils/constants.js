@@ -1,3 +1,5 @@
+import { isObjectIdOrHexString } from "mongoose"
+
 //1. User Role
 export const UserRoleEnum = {
     ADMIN: "admin",
@@ -6,6 +8,7 @@ export const UserRoleEnum = {
 }
 
 export const AvailableUserRoles = Object.values(UserRoleEnum)
+
 //2. Payment Method
 export const paymentMethodEnum = {
     CREDIT_CARD: "credit_card",
@@ -16,6 +19,7 @@ export const paymentMethodEnum = {
 }
 
 export const AvailablepaymentMethod = Object.values(paymentMethodEnum)
+
 //3. Order State
 export const OrderStateEnum = {
     PENDING: "pending",
@@ -28,6 +32,7 @@ export const OrderStateEnum = {
 
 export const AvailableOrderState = Object.values(OrderStateEnum)
 
+//4. Order Paymeny status
 export const OrderPaymentStatusEnum = {
     PENDING: "pending",
     PAID: "paid",
@@ -37,6 +42,7 @@ export const OrderPaymentStatusEnum = {
 
 export const AvailableOrderPaymentStatus = Object.values(OrderPaymentStatusEnum)
 
+//5 Review Rating 
 export const ReviewRatingEnum = {
     STAR_1: "1",
     STAR_2: "2",
@@ -46,3 +52,14 @@ export const ReviewRatingEnum = {
 }
 
 export const AvailableReviewRating = Object.values(ReviewRatingEnum)
+
+//6. Books status
+export const BooksStatusEnum = {
+    AVAILABLE: "available",
+    OUT_OF_STOCK: "out_of_stock",
+    PRE_ORDER: "pre_order",
+    COMING_SOOM: "coming_soon",
+    DISCONTINUED: "discontinued",
+}
+
+export const AvaailableBooksStatus = Object.values(BooksStatusEnum)
