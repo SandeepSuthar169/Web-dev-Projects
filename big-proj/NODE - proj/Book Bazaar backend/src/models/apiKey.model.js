@@ -20,6 +20,14 @@ const apiKeySchema = new Schema(
         lastUserd: {
             type: Boolean,
             required: true,
+        },
+        isActive: {
+            type: Boolean,
+            default: false,
+            required: true
+        },
+        lastUsed: {
+            type: Date
         }
     },
     {
