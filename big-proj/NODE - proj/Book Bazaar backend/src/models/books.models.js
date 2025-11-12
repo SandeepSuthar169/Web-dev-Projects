@@ -38,7 +38,7 @@ const booksSchema = new Schema(
         },
         Publisher: {
             type: String,
-            required: true
+            required: false
         },
         ISBN: {
             type: Number,
