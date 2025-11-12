@@ -81,18 +81,10 @@ const updateBook =  asyncHandler(async (req, res) => {
     if(!id) throw new ApiError(401, "book id not found")
     
     const {price, name, stock, averageRating, totalReviews, status} = req.body
-    console.log(price);
-    console.log(name);
-    console.log(stock);
-    console.log(averageRating);
-    console.log(totalReviews);
-    console.log(status);
     
-    console.log("==========status========");
 
     if(price === undefined ||name === undefined||  stock === undefined || averageRating === undefined || totalReviews === undefined || status === undefined) throw new ApiError(401, "All book fileds are required")
     
-    console.log("==========status========");
 
 
     if(!Object.values(BooksStatusEnum).includes(status)){
@@ -113,7 +105,7 @@ const updateBook =  asyncHandler(async (req, res) => {
     )
     if(!UpdateBooksValue) throw new ApiError(401, "book not update")
 
-    console.log(UpdateBooksValue);
+    // console.log(UpdateBooksValue);
         
 
     return res.status(200).json(new ApiResponse(
@@ -127,6 +119,20 @@ const updateBook =  asyncHandler(async (req, res) => {
 
 
 const deleteBook =  asyncHandler(async (req, res) => {
+    const { id } = await req.params
+
+    if(!id) throw new ApiError(401, "book id not found")
+
+    const deleteBook = await Books.findByIdAndDelete(id)
+
+    if(!deleteBook) throw new ApiError(401, "book not update")
+
+    return res.status(200).json(new ApiResponse(
+        200,
+        deleteBook,
+        "delete book successfully"
+    ))
+
 
 
 })
@@ -137,5 +143,6 @@ const deleteBook =  asyncHandler(async (req, res) => {
 export { 
     addBook,
     getBookInfo,
-    updateBook
+    updateBook,
+    deleteBook
 }
