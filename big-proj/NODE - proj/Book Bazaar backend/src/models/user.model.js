@@ -1,16 +1,10 @@
 import mongoose, { Schema } from "mongoose";
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+import crypto from "crypto";
 
 const userSchema = new Schema(
     {
-        avatar: {
-            type: {
-                url: String,
-                localpath: String
-            },
-            default: {
-                url: `https://placehold.co/600x400`,
-                localpath: ""
-            },
             username: {
                 type: String,
                 required: true,
@@ -27,17 +21,15 @@ const userSchema = new Schema(
             },
             password: {
                 type: String,
-                required: true,
-                unique: true,
-                lowercase: true,
-                trim: true
+                required: true
             },
-            phone: {
-                type: Number,
-                required: true,
-                unique: true,
-                trim: true
-            },
+         
+            // phone: {
+            //     type: Number,
+            //     required: true,
+            //     unique: true,
+            //     trim: true
+            // },
             isEmailVerified: {
                 type: Boolean,
                 required: true,
@@ -46,7 +38,7 @@ const userSchema = new Schema(
             refreshToken: {
                 type: String,
             },
-            forgotPasswordToekn: {
+            forgotPasswordToken: {
                 type: String,
             },
             forgotPasswordExpiry: {
@@ -59,19 +51,17 @@ const userSchema = new Schema(
                 type: Date,
             },
         },
-    },
     {
         timestamps: true
     }
 )
 
 userSchema.pre("save", async function (next) {
-    if(!this.isModified("password")){
-        return next()
-    }
-        this.password = await bcrypt.hash(this.password, 10)
-    next()
-})
+    if (!this.isModified("password")) return next();
+    this.password = await bcrypt.hash(this.password, 10);
+    next();
+  });
+  
 
 userSchema.methods.isPasswordCorrect = async function (password) {
     return await bcrypt.compare(password, this.password)
