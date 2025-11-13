@@ -58,7 +58,7 @@ const getBookReview = asyncHandler( async (req, res) => {
 
     const { BookId } = req.params
     
-    if(!BookId) throw new ApiError(401, " book id is required")
+    if(!BookId) throw new ApiError(401, "book id is required")
 
     const book = await Books.findById(BookId).select("name autharName averageRating totalReviews")
 
@@ -111,13 +111,31 @@ const getBookReview = asyncHandler( async (req, res) => {
     )
 })
 
-
 const deleteReview = asyncHandler( async (req, res) => {
+    console.log(req.params);
+    
+    const {reviewId} = req.params
+    console.log(reviewId);
+    if(!reviewId) throw new ApiError(401, "review Id is required")
+
+    const deleteReview = await Review.findByIdAndDelete(reviewId)
+    if(!deleteReview) throw new ApiError(401, "deleteReview is required")
+
+
+    return res.status(200).json(new ApiResponse(
+        200,
+        deleteReview,
+        "delete book successfully"
+    ))
+
+
+
 
 
 })
 
 export {
     addReview,
-    getBookReview
+    getBookReview,
+    deleteReview
 }
