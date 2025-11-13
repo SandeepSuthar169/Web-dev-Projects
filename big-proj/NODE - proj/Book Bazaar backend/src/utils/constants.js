@@ -42,12 +42,12 @@ export const AvailableOrderPaymentStatus = Object.values(OrderPaymentStatusEnum)
 
 //5 Review Rating 
 export const ReviewRatingEnum = {
-    NOT_DEFINED: "not_defined",
-    STAR_1: "1",
-    STAR_2: "2",
-    STAR_3: "3",
-    STAR_4: "4",
-    STAR_5: "5",
+    NOT_DEFINED: 0,
+    STAR_1: 1,
+    STAR_2: 2,
+    STAR_3: 3,
+    STAR_4: 4,
+    STAR_5: 5,
 }
 
 export const AvailableReviewRating = Object.values(ReviewRatingEnum)

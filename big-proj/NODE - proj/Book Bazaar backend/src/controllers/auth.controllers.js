@@ -97,7 +97,7 @@ const loginUser = asyncHandler(async (req, res) => {
 
     // console.log("=================");
     
-    // const isPasswordValid =  await user.isPasswordCorrect(password)
+    const isPasswordValid =  await user.isPasswordCorrect(password)
 
     // console.log("password", password);
     // console.log("isPasswordCorrect", user.isPasswordCorrect(password));
@@ -113,8 +113,8 @@ const loginUser = asyncHandler(async (req, res) => {
     //5. access and refresh token generate
 
 
-    const accessToken =  user.generateAccessToken()
-    const refreshToken =  user.generateRefreshToken()
+    const accessToken = await  user.generateAccessToken()
+    const refreshToken =  await user.generateRefreshToken()
 
 
         

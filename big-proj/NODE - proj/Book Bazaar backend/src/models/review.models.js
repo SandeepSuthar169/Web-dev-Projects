@@ -1,17 +1,17 @@
 import mongoose, { Schema } from "mongoose";
-import { Books } from "./books.models";
+import { Books } from "./books.models.js";
 import { AvailableReviewRating, ReviewRatingEnum } from "../utils/constants.js"
 
 const reviewSchema = new Schema(
     {
-        books: {
+        book: {
             type: mongoose.Types.ObjectId,
-            ref: "Books",
+            ref: "Book",
             required: true
         },
         rating: {
             type: Number,
-            enum: AvailableReviewRating,
+            enum: Object.values(ReviewRatingEnum),  
             default: ReviewRatingEnum.NOT_DEFINED
         },
         comment: {
