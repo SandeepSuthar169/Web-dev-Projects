@@ -22,7 +22,8 @@
     "express-validator": "^7.3.0",
     "i": "^0.3.7",
     "jsonwebtoken": "^7.4.3",
-    "mongoose": "^8.19.3",
+    "mongoose": "^8.19.4",
+    "mongooses": "^1.0.0",
     "npm": "^11.6.2"
   },
   "devDependencies": {

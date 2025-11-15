@@ -23,13 +23,6 @@ const userSchema = new Schema(
                 type: String,
                 required: true
             },
-         
-            // phone: {
-            //     type: Number,
-            //     required: true,
-            //     unique: true,
-            //     trim: true
-            // },
             isEmailVerified: {
                 type: Boolean,
                 required: true,

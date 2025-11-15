@@ -38,7 +38,8 @@ const orderSchema = new Schema(
             type: String,
             enum: AvailableOrderState,
             default: OrderStateEnum.PENDING
-        }
+        },
+
     },
     {
         timestamps: true
