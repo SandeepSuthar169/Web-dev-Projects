@@ -1,10 +1,16 @@
-import mongoose from "mongoose"
+import mongoose, { STATES } from "mongoose"
 import { Books } from "../models/books.models.js"
 import { Order } from "../models/order.models.js"
 import { User } from "../models/user.model.js"
 import { asyncHandler} from "../utils/asyncHandler.js"
 import { ApiError } from "../utils/apiError.js"
 import { ApiResponse } from "../utils/apiResponse.js"
+import { 
+    OrderStateEnum, 
+    AvailableOrderState, 
+    AvailableOrderPaymentStatus, 
+    OrderPaymentStatusEnum  
+} from "../utils/constants.js"
 
 
 const createOrde = asyncHandler(async (req, res) => {
@@ -86,12 +92,57 @@ const getUserOrder = asyncHandler(async (req, res) => {
 
 
 
-const getOrderOrderDetails = asyncHandler(async (req, res) => {
-
-})
-
 const updateOrder = asyncHandler(async (req, res) => {
 
+        const { bookId } = await req.params
+        if(!bookId) throw new ApiError(401, "Book id is  required!")
+
+        const book = await Books.findById(bookId)
+        if(!book) throw new ApiError(401, "books is  required!")
+        
+        const  {
+            price,
+            quantity,
+            paymentStatus,
+            state
+        } = req.body
+        // console.log("price ===>",price);
+        // console.log("quantity ==> ",quantity);
+        // console.log("books ==> ",book);
+        // console.log("payment status == > ",paymentStatus);
+        // console.log("state ==> ",state);
+        
+        if(!price || !quantity || !book || !paymentStatus || !state) throw new ApiError(401, "order info is  required!")
+
+
+        const { orderId } = req.params
+        if(!orderId) throw new ApiError(400, "order id is required")
+        
+        if(!Object.values(OrderStateEnum).includes(state)) throw new ApiError(400, "Invalid state")
+        
+        if(!Object.values(OrderPaymentStatusEnum).includes(paymentStatus)) throw new ApiError(400, "Invalid payment status")
+        
+        const updateOrder = await Order.findByIdAndUpdate(
+            orderId,{
+                quantity,
+                price: book.price * quantity, 
+                book,
+                paymentStatus,
+                state
+            },
+            {
+                new: true, runValidators: true
+            }
+        )
+        if(!updateOrder) throw new ApiError(400, "order id is required")
+        
+            return res.status(200).json(new ApiResponse(
+                200,
+                {
+                    updateOrder
+                },
+                "update order info successfully"
+            ))
 })
 
 const deleteOrder = asyncHandler(async (req, res) => {
@@ -101,5 +152,5 @@ const deleteOrder = asyncHandler(async (req, res) => {
 export {
     createOrde,
     getUserOrder,
-    getOrderOrderDetails
+    updateOrder
 }

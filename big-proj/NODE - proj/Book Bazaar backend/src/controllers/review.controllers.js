@@ -127,11 +127,6 @@ const deleteReview = asyncHandler( async (req, res) => {
         deleteReview,
         "delete book successfully"
     ))
-
-
-
-
-
 })
 
 export {
