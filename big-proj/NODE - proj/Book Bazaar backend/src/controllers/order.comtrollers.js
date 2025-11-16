@@ -9,7 +9,7 @@ import { ApiResponse } from "../utils/apiResponse.js"
 
 const createOrde = asyncHandler(async (req, res) => {
     const { quantity } = req.body
-    if(!quantity ) throw new ApiError(401, "All order fileds are required")
+    if(!quantity) throw new ApiError(401, "All order fileds are required")
         
     const { email, username } = req.body
     if(!email || !username) throw new ApiError(401, "User fields are required!")
@@ -18,30 +18,31 @@ const createOrde = asyncHandler(async (req, res) => {
     if(!user) throw new ApiError(401, "user is  required!")
 
     const { bookId } = await  req.params
-    // console.log(bookId);
-    // console.log(req.params);
-
     if(!bookId) throw new ApiError(401, "Book id is  required!")
+
+    if (!mongoose.Types.ObjectId.isValid(bookId))  throw new ApiError(400, "Invalid book ID format");
     
     const book = await Books.findById(bookId)
-    console.log(book);     
     if(!book) throw new ApiError(401, "books is  required!")
 
     let total = book.price * quantity
     if(!total) throw new ApiError(401, "Total quantity price is required!")
 
-    const order = await Order.create({
+    const order = await Order.create({        
         user: user._id,
-        book: bookId,
+        books: book._id,
         quantity,
-        totalAmount: total
+        total,
+        price: book.price * quantity 
     })    
     if(!order) throw new ApiError(401, "order required!")
 
     return res.status(200).json(
         new ApiResponse(
             200,
-            order,
+            {
+                order
+            },
             "Order create successfully!"
         )
     )
