@@ -145,12 +145,27 @@ const updateOrder = asyncHandler(async (req, res) => {
             ))
 })
 
-const deleteOrder = asyncHandler(async (req, res) => {
+const deleteOrder = asyncHandler(async (req, res) => {    
+    const { orderId } = req.params
+    if(!orderId) throw new ApiError(400, "order id is required")
+
+    const deleteOrder = await Order.findByIdAndDelete(orderId)
+    if(!deleteOrder) throw new ApiError(400, "order fatching error")
+
+    return res.status(200).json(new ApiResponse(
+        200,
+        {},
+        "order delete successfully"
+    ))
+
+
+
 
 })
 
 export {
     createOrde,
     getUserOrder,
-    updateOrder
+    updateOrder,
+    deleteOrder
 }
