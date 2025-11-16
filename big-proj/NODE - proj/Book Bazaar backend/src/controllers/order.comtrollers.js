@@ -49,7 +49,39 @@ const createOrde = asyncHandler(async (req, res) => {
 })
 
 const getUserOrder = asyncHandler(async (req, res) => {
+    //1. get user info
+    const { username, email } = req.body
 
+    if(!username || !email) throw new ApiError(401, "user info is  required!")
+    
+    //2. get book info
+    console.log(req.params);
+    
+    const { bookId } = await req.params
+    console.log(bookId);
+    if(!bookId) throw new ApiError(401, "Book id is  required!")
+
+    if (!mongoose.Types.ObjectId.isValid(bookId))  throw new ApiError(400, "Invalid book ID format");
+    
+    const book = await Books.findById(bookId)
+    if(!book) throw new ApiError(401, "books is  required!")
+    
+    //3. get order info
+    const {orderId} = req.params
+    //4. validate
+    if(!orderId) throw new ApiError(400, "order id is required")
+
+    const order = await Order.findById(orderId).populate("quantity price user books")
+
+    if(!order) throw new ApiError(400, "order is required")
+
+    return res.status(200).json(new ApiResponse(
+        200,
+        {
+            order
+        },
+        "fetch order info successfully"
+    ))
 })
 
 
@@ -67,5 +99,7 @@ const deleteOrder = asyncHandler(async (req, res) => {
 })
 
 export {
-    createOrde
+    createOrde,
+    getUserOrder,
+    getOrderOrderDetails
 }
