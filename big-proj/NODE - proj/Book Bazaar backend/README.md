@@ -1,0 +1,2 @@
+Book Bazaar Backend
+A robust, feature-rich backend API for an online book marketplace ("Book Bazaar") built with Node.js, Express, and MongoDB. This server provides all the necessary endpoints for user authentication, book inventory management, shopping cart operations, and order processing.
