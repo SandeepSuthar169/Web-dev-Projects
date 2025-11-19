@@ -28,6 +28,7 @@ A robust built with Node.js, Express, and MongoDB. This server provides endpoint
  - CORS: cors
 
 ### Project Schema 
+<img width="1685" height="2009" alt="diagram-export-19-11-2025-09_04_26" src="https://github.com/user-attachments/assets/010a57ff-5c0a-4db5-9ddd-c09d3eba0354" />
 
 ###  Installation & Setup
 
